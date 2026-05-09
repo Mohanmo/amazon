@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Signal Timer</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Binary Signal Timer</h1>
+      <p class="hint">Choose duration and direction, then start a manual signal timer.</p>
+
+      <div class="row">
+        <label for="duration">Duration</label>
+        <select id="duration">
+          <option value="5">5 seconds</option>
+          <option value="15">15 seconds</option>
+          <option value="30">30 seconds</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="direction">Direction</label>
+        <select id="direction">
+          <option value="CALL">CALL ⬆</option>
+          <option value="PUT">PUT ⬇</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="asset">Asset</label>
+        <input id="asset" type="text" placeholder="e.g. EUR/USD" />
+      </div>
+
+      <div class="actions">
+        <button id="start">Start signal</button>
+        <button id="stop" class="secondary">Stop</button>
+      </div>
+
+      <div id="status" class="status">Idle</div>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "QXBroker Binary Signal Timer",
+  "version": "1.0.0",
+  "description": "Manual signal helper with 5s, 15s, and 30s timers for binary trade workflows.",
+  "permissions": ["storage", "notifications"],
+  "host_permissions": ["https://qxbroker.com/*"],
+  "action": {
+    "default_title": "Binary Signal Timer",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://qxbroker.com/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
